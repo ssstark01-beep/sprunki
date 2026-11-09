@@ -1,0 +1,42 @@
+{
+  "phase1": {
+    "period": 4.8,
+    "sample_rate": 24000
+  },
+  "phase2": {
+    "period": 6.85,
+    "sample_rate": 24000
+  },
+  "definitive-phase3": {
+    "period": 8.0,
+    "sample_rate": 24000
+  },
+  "definitive-phase4": {
+    "period": 8.0,
+    "sample_rate": 24000
+  },
+  "definitive-phase5": {
+    "period": 6.85,
+    "sample_rate": 24000
+  },
+  "definitive-phase6": {
+    "period": 6.85,
+    "sample_rate": 24000
+  },
+  "definitive-phase7": {
+    "period": 4.8,
+    "sample_rate": 24000
+  },
+  "definitive-phase8": {
+    "period": 6.4,
+    "sample_rate": 24000
+  },
+  "definitive-phase9": {
+    "period": 5.2,
+    "sample_rate": 24000
+  },
+  "definitive-phase10": {
+    "period": 4.5,
+    "sample_rate": 24000
+  }
+}

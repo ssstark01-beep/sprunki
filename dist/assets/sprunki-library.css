@@ -1,0 +1,95 @@
+/* Role → phase → player. Lists grow with their content instead of scrolling inside panels. */
+#play > .grid{grid-template-columns:minmax(0,1.65fr) minmax(330px,1fr);align-items:start;gap:24px}
+#play .library-panel{display:grid;grid-template-columns:minmax(0,1fr) 118px;gap:20px;padding:20px;align-items:start}
+#play .library-picker h2,.phase-column h2{font-size:17px;display:flex;align-items:center;gap:6px;margin:0 0 10px;white-space:nowrap}
+.step-number{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;flex-shrink:0;border-radius:9px;background:#eee5f8;color:var(--purple);font-size:13px;font-weight:700}
+.library-hint{margin:0 0 15px;font-size:12px}
+#play .roles{grid-template-columns:repeat(auto-fit,minmax(84px,1fr));gap:10px;padding:0;max-height:none;height:auto;overflow:visible}
+#play .role,#play .role.selected{border-width:2px;padding:8px 4px;min-height:116px;border-radius:15px}
+#play .role img{width:100%;height:80px;object-fit:contain}
+#play .role strong{font-size:12px;line-height:1.35;margin-top:4px}
+.phase-column{position:sticky;top:16px;min-width:0;align-self:start;padding-left:16px;border-left:1px solid var(--line)}
+.phase-role-name{font-size:12px;color:var(--purple);margin:0 0 10px;overflow-wrap:anywhere;line-height:1.4;min-height:17px}
+.phase-nav{display:flex;gap:7px;margin-bottom:10px}
+.phase-nav .phase-arrow{flex:1;min-width:0;height:40px;padding:0;font-size:28px;line-height:1;border-radius:11px}
+#play .phases{display:flex;flex-direction:column;flex-wrap:nowrap;gap:7px;margin:0;overflow:visible;max-height:none}
+#play .phases button{display:flex;align-items:center;justify-content:center;gap:8px;position:relative;width:100%;min-height:54px;padding:6px;border-radius:12px;background:#faf8fc}
+#play .phases button.selected{border:2px solid var(--purple);padding:5px;background:#eee5fb;box-shadow:0 2px 7px #7054b516}
+#play .phases button img{width:36px;height:38px;object-fit:contain;pointer-events:none}
+.phase-index{display:flex;flex-direction:column;align-items:center;line-height:1.1;pointer-events:none}
+.phase-index small{font-size:10px;color:var(--muted)}
+.phase-index strong{font-size:22px;font-variant-numeric:tabular-nums;font-weight:700}
+.playback-column{min-width:0;align-self:stretch}
+#play .player-panel{position:sticky;top:16px;margin:0;padding:22px}
+.player-step{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--muted);margin:0 0 12px}
+#play .character-player h2{font-size:23px;line-height:1.4;margin-bottom:8px;overflow-wrap:anywhere}
+#play .character-player .stage{height:310px;margin:12px 0 16px}
+#play .character-player .stage canvas{width:276px;height:276px;max-width:95%}
+#play .character-player .stage img{height:276px}
+#play .phase-player{display:block;margin:0 0 12px}
+#play .phase-player .play-primary{width:100%;min-height:58px;font-size:20px}
+#play .listen-actions{gap:10px;flex-wrap:wrap}
+#play .motion-controls{gap:7px}
+#play .description{min-height:0;margin-bottom:12px}
+#play .chat-panel{grid-column:1 / -1}
+#play .chatbox{height:240px}
+/* The workshop's role shelf follows the same flat-list rule. The score itself can pan. */
+.sound-shelf{max-height:none;height:auto;overflow:visible}
+@media(min-width:1750px){
+  #play .library-panel{grid-template-columns:minmax(0,1fr) 130px;gap:24px}
+  #play .roles{grid-template-columns:repeat(auto-fit,minmax(90px,1fr))}
+  #play .role,#play .role.selected{min-height:122px}
+  #play .role img{height:86px}
+  #play .role strong{font-size:13px}
+  #play .character-player .stage{height:340px}
+  #play .character-player .stage canvas{width:304px;height:304px}
+  #play .character-player .stage img{height:304px}
+}
+@media(max-width:1100px) and (min-width:901px){
+  #play > .grid{grid-template-columns:minmax(0,1.6fr) minmax(300px,1fr);gap:16px}
+  #play .library-panel{grid-template-columns:minmax(0,1fr) 98px;gap:12px;padding:16px}
+  .phase-column{padding-left:10px}
+  #play .roles{grid-template-columns:repeat(auto-fit,minmax(74px,1fr));gap:8px}
+  #play .role img{height:70px}
+  #play .role,#play .role.selected{min-height:103px}
+  #play .player-panel{padding:17px}
+  #play .character-player .stage{height:265px}
+  #play .character-player .stage canvas{width:230px;height:230px}
+  #play .character-player .stage img{height:230px}
+}
+@media(max-width:900px){
+  #play > .grid{grid-template-columns:minmax(0,1fr);gap:18px}
+  #play .library-panel{grid-template-columns:minmax(0,1fr) 98px;gap:14px;padding:16px}
+  .phase-column{padding-left:10px;top:10px}
+  #play .player-panel{position:static;margin:0;padding:18px}
+  #play .character-player .stage{height:270px}
+  #play .character-player .stage canvas{width:238px;height:238px}
+  #play .character-player .stage img{height:238px}
+  #play .chat-panel{grid-column:auto}
+}
+@media(max-width:480px){
+  #play .library-panel{grid-template-columns:minmax(0,1fr) 76px;gap:10px;padding:13px}
+  #play .library-picker h2,.phase-column h2{font-size:14px;gap:4px}
+  .step-number{width:22px;height:22px;border-radius:7px;font-size:12px}
+  .library-hint{font-size:11px;margin-bottom:12px}
+  #play .roles{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+  #play .role,#play .role.selected{padding:6px 2px;min-height:88px;border-radius:11px}
+  #play .role img{height:58px}
+  #play .role strong{font-size:10px;line-height:1.3}
+  .phase-column{padding-left:7px}
+  .phase-role-name{font-size:11px;margin-bottom:8px}
+  .phase-nav{gap:5px;margin-bottom:8px}
+  .phase-nav .phase-arrow{height:36px;font-size:25px}
+  #play .phases{gap:6px}
+  #play .phases button{min-height:50px;gap:3px;padding:4px}
+  #play .phases button.selected{padding:3px}
+  #play .phases button img{width:27px;height:32px}
+  .phase-index strong{font-size:18px}
+  .phase-index small{font-size:9px}
+  #play .character-player h2{font-size:21px}
+  #play .phase-player .play-primary{font-size:18px}
+}
+.missing-audio{margin:12px 0 18px;padding:14px;border:1px solid #e9d99c;border-radius:14px;background:#fff9e6;color:#655323}
+.missing-audio p{margin:0 0 10px;font-size:14px}
+.missing-audio button{width:100%;border-color:#d4bc70;font-weight:650}
+#listen-sound:disabled,#add-to-score:disabled{cursor:default}

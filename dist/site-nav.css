@@ -1,0 +1,9 @@
+/* Shared navigation for all three static pages. */
+.site-header{box-sizing:border-box!important;width:100%!important;max-width:none!important;margin:0!important;padding:10px 20px!important;min-height:60px;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:12px!important;flex-wrap:wrap;background:#f8f5ed;color:#273b34;font:600 14px/1.4 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;border-bottom:1px solid #e1e6d9}
+.site-header .site-brand{display:inline-flex;align-items:center;gap:8px;padding:0!important;background:transparent!important;color:#273b34!important;text-decoration:none!important;white-space:nowrap;font-size:16px;font-weight:800;border-radius:0!important}
+.site-brand span{display:grid;place-items:center;width:34px;height:34px;border-radius:11px;background:#e8b465;color:white;font-size:17px}
+.site-header .site-nav{display:flex!important;align-items:center;gap:6px;flex-wrap:wrap}
+.site-header .site-nav a{box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:8px 14px!important;border:0;border-radius:11px!important;color:#496656!important;background:#e9eee5!important;text-decoration:none!important;font:700 14px/1.2 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;white-space:nowrap}
+.site-header .site-nav a[aria-current="page"]{background:#395f4b!important;color:#fff!important}
+.site-header a:focus-visible{outline:3px solid #d79348;outline-offset:2px}
+@media(max-width:600px){.site-header{padding:8px 12px!important;gap:8px!important}.site-header .site-brand{font-size:14px}.site-brand span{width:30px;height:30px}.site-header .site-nav{gap:4px}.site-header .site-nav a{font-size:12px;padding:8px 9px!important;min-height:38px}}

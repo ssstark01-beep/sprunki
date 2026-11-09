@@ -1,0 +1,1 @@
+window.LEARNING_DATA = [{"date":"2026-11-08","items":[{"id":"earthworm-underground","title":"蚯蚓的地下生活","category":"科普","pdf":"learning-assets/2026-11-08-earthworm-underground.pdf","preview":"learning-assets/2026-11-08-earthworm-underground.png"}]}];
