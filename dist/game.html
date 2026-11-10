@@ -11,7 +11,7 @@ header,main{max-width:none;width:100%}header{padding:24px clamp(18px,3vw,56px) 1
 <div id="timeline-editor" hidden><div class="score-scroll"><div id="score-grid" class="score-grid"><div id="score-ruler" class="score-ruler"></div><div id="score-lanes"></div><div id="score-playhead" class="score-playhead"></div></div></div><button id="score-add-lane" class="add-lane">＋ 增加轨道</button><div id="score-details" class="score-details"></div></div>
 <p id="score-summary" class="score-summary"></p><p id="score-help" class="score-help"></p>
 </div></div></div></section>
-<p class="notice">角色与音轨来自 Sprunki 社区素材；部分阶段没有独立音轨。浏览器播放，不连接机器人。</p></main><div id="toast" role="status"></div><script src="assets/sprunki-music-engine.js"></script><script src="assets/sprunki-arranger.js"></script><script src="assets/catalog.js"></script><script>
+<p class="notice">角色与音轨来自 Sprunki 社区素材；部分阶段没有独立音轨。浏览器播放，不连接机器人。</p></main><div id="toast" role="status"></div><script src="assets/sprunki-music-engine.js?v=f3aa890ff5a1344d"></script><script src="assets/sprunki-arranger.js"></script><script src="assets/catalog.js"></script><script>
 function toast(message){const e=document.getElementById('toast');e.textContent=message;e.style.display='block';clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>e.style.display='none',3500)}
 window.workshop=new SprunkiArranger({catalog:window.MUSIC_CATALOG,toast,stopPreview:()=>{}});
 </script></body></html>

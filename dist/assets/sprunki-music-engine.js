@@ -20,9 +20,12 @@ class SprunkiMusicEngine {
     };
     this.worker.onerror=()=>{const job=this.pending;this.pending=null;job?.reject(Error('音乐没准备好，请再点一次播放'));this.worker?.terminate();this.worker=null;};
   }
-  warm(paths){if(!paths.length)return;try{this.ensureWorker();this.worker.postMessage({type:'warm',paths:[...new Set(paths)]});}catch{/* Playback reports any unavailable worker. */}}
+  // Resolve document-relative paths before crossing into the worker's assets directory.
+  audioUrl(path){return new URL(path,document.baseURI).href;}
+  warm(paths){if(!paths.length)return;try{this.ensureWorker();this.worker.postMessage({type:'warm',paths:[...new Set(paths.map(path=>this.audioUrl(path)))]});}catch{/* Playback reports any unavailable worker. */}}
   render(score,context,progress){
     this.cancel();
+    score={...score,clips:score.clips.map(clip=>({...clip,path:this.audioUrl(clip.path)}))};
     const key=JSON.stringify({phaseId:score.phaseId,period:score.period,clips:score.clips.map(({path,start,length})=>({path,start,length})).sort((a,b)=>a.path.localeCompare(b.path)||a.start-b.start||a.length-b.length)});
     if(this.cache.has(key)){const result=this.cache.get(key);this.cache.delete(key);this.cache.set(key,result);this.metrics.mixHits++;return Promise.resolve({...result,cacheHit:true,copyMs:0});}
     this.ensureWorker();const id=++this.serial;
